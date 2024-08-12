@@ -4,14 +4,14 @@ from . import views, book_appointment
 
 
 urlpatterns = [
-    path('all_branches', views.all_branches , name='all_branches'),
-    path('all_services', views.all_services , name='all_services'),
+    path('api/all_branches/', views.all_branches , name='all_branches'),
+    path('api/all_services/', views.all_services , name='all_services'),
 
 
     path('get_all_slots', book_appointment.get_all_slots , name='get_all_slots'),
     path('insert_appointment_slots', book_appointment.insert_appointment_slots , name='insert_appointment_slots'),
-    path('get_appointments', book_appointment.get_appointments , name='get_appointments'),
-    path('add_appointment', book_appointment.add_appointment , name='add_appointment'),
+    path('api/get_appointments/', book_appointment.get_appointments , name='get_appointments'),
+    path('api/add_appointment/', book_appointment.add_appointment , name='add_appointment'),
     path('reschedule_appointment', book_appointment.reschedule_appointment , name='reschedule_appointment'),
     path('validate_cancellation_token', book_appointment.validate_cancellation_token , name='validate_cancellation_token'),
     path('cancel_appointment', book_appointment.cancel_appointment , name='cancel_appointment'),

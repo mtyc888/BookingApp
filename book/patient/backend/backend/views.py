@@ -41,6 +41,7 @@ def dashboard(request):
 def all_branches(request):
     try:
         branches = Branch.objects.values()
+        print(branches)  # Add this to check what is being returned
         return JsonResponse({'branches': list(branches)})
     except:
         return JsonResponse({'branches': list([])})

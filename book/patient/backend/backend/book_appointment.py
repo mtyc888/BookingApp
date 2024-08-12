@@ -284,6 +284,7 @@ def add_appointment(request):
                 "message":  "Failed to add appointment",
                 "details" : str(e)
             }})
+    
 def send_email(patient_id, appointment_id, appt_datetime, start_time, end_time, appointment_duration, booking_reference, email_template_name):
     # 
     # patient_id = 24

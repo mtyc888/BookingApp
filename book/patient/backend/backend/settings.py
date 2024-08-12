@@ -89,9 +89,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'bookitdb',
-        'USER': 'admin',
-        'PASSWORD': 'sparkstech',
-        'HOST': 'sparks-bookit.cgd5opgxcbx2.ap-southeast-2.rds.amazonaws.com',  # Use the correct host if MySQL is on a different server
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',  # Use the correct host if MySQL is on a different server
         'PORT': '3306',       # MySQL default port
     }
 }

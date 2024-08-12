@@ -34,6 +34,7 @@ class Appointment(models.Model):
     update_at = models.DateTimeField(auto_now=True)
     branch = models.CharField()
     reason = models.CharField()
+    slots_taken = models.JSONField(default=list)
     
     class Meta:
         db_table = 'appointments'  # Specify the table name
@@ -59,7 +60,7 @@ class Service(models.Model):
     dentists = models.JSONField()
     created_at = models.DateTimeField()
     update_at = models.DateTimeField()
-
+    cost = models.DecimalField()
     class Meta:
         db_table = 'services'  # Specify the table name
         app_label = 'bookitdb'  # Specify the schema name
@@ -109,28 +110,14 @@ class EmailTemplate(models.Model):
 
 
 class AppointmentSlot(models.Model):
-    # Primary Key
-    id = models.AutoField(primary_key=True)
-
-    dentist_id = models.IntegerField(default=0, null=False)
-
-    # slots for dentist
+    dentist_id = models.IntegerField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
-    is_available = models.BooleanField(default=True)
-
-    def formatted_datetime(self):
-        # Customize the datetime format to include milliseconds and 'Z' (in UTC)
-        formatted_start_time = self.start_time.isoformat() + 'Z'
-        formatted_end_time = self.end_time.isoformat() + 'Z'
-        return {
-            'start_time': formatted_start_time,
-            'end_time': formatted_end_time
-        }
+    is_available = models.BooleanField(default=True)  # 1 for available, 0 for taken
+    service_id = models.IntegerField(null=True, blank=True)
 
     class Meta:
         db_table = 'appointment_slots'
-        app_label = 'bookitdb'
 
 
 # class WaitingList(models.Model):
