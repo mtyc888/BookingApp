@@ -1,0 +1,35 @@
+<!-- welcome_email.html -->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Booking an Appointment</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You for Booking an Appointment</h1>
+        <p>Dear {{ patient.firstname }},</p>
+        <p>We wanted to express our sincere gratitude for booking an appointment with us. Your trust in our services means a lot to us, and we are committed to providing you with the best experience.</p>
+        <p>Your appointment details:</p>
+        <ul>
+            <li><strong>Appointment ID:</strong> {{ appointment_id }}</li>
+            <li><strong>Booking Reference:</strong> {{booking_reference}}</li>
+            <li><strong>Date:</strong> {{ appointment_date}}</li>
+            <li><strong>Start Time:</strong> {{ start_time }}</li>
+            <li><strong>End Time:</strong> {{ end_time }}</li>
+            <li><strong>Duration:</strong> {{ appointment_duration }}</li>
+            <li><strong>Location:</strong> 254 5th Street, San Francisco, CA 94103</li>
+        </ul>
+
+        <small><strong>You can cancel this appointment at most 7 days before the appointment day</strong></small>
+        <p>To cancel the appointment: <a href={{cancelation_link}}>{{cancelation_link}}</a></p>
+
+        <p>If you have any questions or need to reschedule, please feel free to contact us at <a href="mailto:sparkstech123@gmail.com">sparkstech123@gmail.com</a>.</p>
+        <p>Once again, thank you for choosing us. We look forward to serving you.</p>
+        <p>Best regards,<br> The [Your Company] Team</p>
+    </div>
+</body>
+</html>
+

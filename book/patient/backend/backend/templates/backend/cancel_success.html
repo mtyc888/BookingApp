@@ -1,0 +1,32 @@
+<!-- delete_appointment_email.html -->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancellation completed</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>You have cancelled the appointment with us</h1>
+        <p>Dear {{ patient.firstname }},</p>
+        <p>Please let us know the reason of why you cancel the appointment with us to help us improve further.</p>
+        <p>Your appointment details:</p>
+        <ul>
+            <li><strong>Appointment ID:</strong> {{ appointment_id }}</li>
+            <li><strong>Booking Reference:</strong> {{booking_reference}}</li>
+            <li><strong>Date:</strong> {{ appointment_date}}</li>
+            <li><strong>Start Time:</strong> {{ start_time }}</li>
+            <li><strong>End Time:</strong> {{ end_time }}</li>
+            <li><strong>Duration:</strong> {{ appointment_duration }}</li>
+            <li><strong>Location:</strong> 254 5th Street, San Francisco, CA 94103</li>
+        </ul>
+
+        <p>If you have any questions, please feel free to contact us at <a href="mailto:sparkstech123@gmail.com">sparkstech123@gmail.com</a>.</p>
+        <p>Once again, thank you for choosing us. We look forward to serving you.</p>
+        <p>Best regards,<br> The [Your Company] Team</p>
+    </div>
+</body>
+</html>
+
