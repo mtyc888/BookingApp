@@ -51,7 +51,7 @@ function AppointmentSelection(){
         setLoading(true);
 
         setTimeout(() => {     
-          axios.post(`${API_URL}/get_appointments`, {
+          axios.post(`http://127.0.0.1:8000/api/get_appointments/`, {
               branch_name: branch.name,
               service_id: service.id, 
               appointment_date: moment(state[0].startDate).format('YYYY-MM-DDTHH:mm:ss.SSSZ')
@@ -70,6 +70,7 @@ function AppointmentSelection(){
         }, 1500);
 
         console.log("startDate", new Date(state[0].startDate), "endDate", new Date(state[0].endDate));
+        console.log('dentists: ',dentists)
     }, [state[0].startDate]);
     
     function handleSelect(ranges) {

@@ -17,7 +17,7 @@ function NewAppointment() {
   useEffect(() => {
       setLoading(true);
       setTimeout(() => {     
-        axios.get(`${API_URL}/all_services`)
+        axios.get(`http://127.0.0.1:8000/api/all_services/`)
         .then((response) => {
             setServices(response.data.services);  
         })
@@ -28,6 +28,7 @@ function NewAppointment() {
           setLoading(false);
         });
       }, 3000);
+      console.log('services',services)
   }, []);
 
   return (

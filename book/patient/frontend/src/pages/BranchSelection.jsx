@@ -19,7 +19,7 @@ function NewAppointment() {
       //start loading the data
       setLoading(true);
       setTimeout(() => {     
-        axios.get(`${API_URL}/all_branches`)
+        axios.get(`http://127.0.0.1:8000/api/all_branches/`)
         .then((response) => {
             console.log(JSON.stringify(response.data.branches));
 
@@ -35,6 +35,7 @@ function NewAppointment() {
           setLoading(false);
         });
       }, 3000);
+      
   }, []);
 
   return (
@@ -56,7 +57,6 @@ function NewAppointment() {
                 aria-labelledby=""
                 onClick={() => {
                   AppointmentStorage.setBranch(branch);
-
                   navigate("/appointment_type");
                 }}
               >

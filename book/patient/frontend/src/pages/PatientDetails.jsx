@@ -62,7 +62,7 @@ function PatientDetails() {
 
       event.preventDefault(); // Prevent the default form submission
 
-      await axios.post(`${API_URL}/add_appointment`, {
+      await axios.post(`http://127.0.0.1:8000/api/add_appointment/`, {
         dentist_id: dentist.id,
         service_id: service.id,
         service_name: service.name,
